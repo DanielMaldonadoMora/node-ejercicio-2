@@ -7,7 +7,7 @@ const repairExist = catchAsync(async (req, res, next) => {
 
   const repair = await Repair.findOne({ where: { id } });
   if (!repair) {
-    return next(new AppError('Repair not found', 404));
+    return next(new AppError('Repair not found ', 404));
   }
   req.repair = repair;
   next();
